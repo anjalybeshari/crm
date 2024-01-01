@@ -1,0 +1,66 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="card text-bg-dark">
+  <div class="card-header text-warning text-decoration-underline">
+    <strong>
+      {{ customer_record.first_name }} {{ customer_record.last_name }}</strong
+    >
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      <strong class="text-warning">Email: </strong>{{ customer_record.email }}
+    </p>
+
+    <p class="card-text">
+      <strong class="text-warning">Phone: </strong>{{ customer_record.phone }}
+    </p>
+
+    <p class="card-text">
+      <strong class="text-warning">Address: </strong>
+      {{ customer_record.address}}
+    </p>
+
+    <p class="card-text">
+      <strong class="text-warning">City: </strong>{{ customer_record.city }}
+    </p>
+
+    <p class="card-text">
+      <strong class="text-warning">State: </strong>{{ customer_record.state }}
+    </p>
+
+    <p class="card-text">
+      <strong class="text-warning">Zipcode: </strong>
+      {{ customer_record.zipcode }}
+    </p>
+
+    <p class="card-text">
+      <strong class="text-warning">Create At: </strong>
+      {{ customer_record.created_at }}
+    </p>
+
+    <p class="card-text">
+      <strong class="text-warning">ID: </strong>{{ customer_record.id }}
+    </p>
+  </div>
+</div>
+
+<br /><br />
+<a
+  href="{% url 'home' %}"
+  class="btn border border-warning text-light btn-outline-warning"
+  >Back</a
+>
+
+<a
+  href="{% url 'delete_record' customer_record.id %}"
+  class="btn btn-outline-danger"
+  >Delete</a
+>
+
+<a
+  href="{% url 'update_record' customer_record.id %}"
+  class="btn border border-warning text-light btn-outline-warning"
+  >Update Record</a
+>
+
+{% endblock %}
